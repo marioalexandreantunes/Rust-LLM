@@ -1,71 +1,88 @@
-# Rust OpenAI Vision API Integration
+# Integração de OCR e Visão por IA em Rust
 
-This Rust project provides integration with OpenAI's Vision API for processing and analyzing images. It demonstrates how to use the GPT-4o-mini model to generate descriptions and translations of text in manga images.
+Este projeto em Rust demonstra a comparação entre tecnologias de OCR (Reconhecimento Ótico de Caracteres) e modelos de linguagem com capacidades de visão (LLM Vision) para processamento e análise de imagens. O foco principal é avaliar o desempenho e eficácia de ambas as abordagens para extração e tradução de texto em imagens, especialmente em mangas.
 
-## Features
+## Funcionalidades
 
-- Image processing and base64 encoding
-- OpenAI Vision API integration
-- Manga text translation (Portuguese)
-- Performance timing measurements
-- Environment variable configuration
+- Processamento de imagens e codificação base64
+- Integração com API OCR.space para reconhecimento de texto
+- Integração com OpenAI Vision API (modelo GPT-4o-mini)
+- Tradução de texto em mangas para português de Portugal
+- Medição de desempenho e tempo de resposta
+- Configuração via variáveis de ambiente
 
-## Prerequisites
+## Comparação OCR vs LLM Vision
 
-- Rust (latest stable version)
-- OpenAI API key
+O projeto permite comparar:
+- Precisão na extração de texto de imagens
+- Tempo de resposta de cada tecnologia
+- Qualidade da tradução para português de Portugal
+- Capacidade de compreensão contextual das imagens
 
-## Setup
+## Pré-requisitos
 
-1. Clone the repository:
+- Rust (versão estável mais recente)
+- Chave de API OpenAI
+- Chave de API OCR.space
+
+## Sites
+
+- https://platform.openai.com/api-keys
+- https://ocr.space/OCRAPI
+
+## Configuração
+
+1. Clone o repositório:
    ```bash
-   git clone <repository-url>
+   git clone <url-do-repositório>
    cd Rust-LLM
    ```
 
-2. Create a `.env` file in the project root and add your OpenAI API key:
+2. Crie um ficheiro `.env` na raiz do projeto e adicione as suas chaves de API:
    ```
-   OPENAI_API_KEY=your_api_key_here
+   OPENAI_API_KEY=sua_chave_api_openai
+   OCR_API_KEY=sua_chave_api_ocr
    ```
 
-3. Install dependencies:
+3. Instale as dependências:
    ```bash
    cargo build
    ```
 
-## Usage
+## Utilização
 
-1. Place your image file in the project directory
+1. Coloque os seus ficheiros de imagem na diretoria do projeto
 
-2. Update the image path in `src/main.rs`:
+2. Atualize os caminhos das imagens em `src/main.rs` conforme necessário:
    ```rust
-   let image_path = "path/to/your/image.png";
+   let image_path = "caminho/para/sua/imagem.png";
    ```
 
-3. Run the project:
+3. Execute o projeto:
    ```bash
    cargo run
    ```
 
-## Dependencies
+## Dependências
 
-- `async-openai`: OpenAI API client
-- `base64`: Image encoding
-- `dotenv`: Environment variable management
-- `tokio`: Async runtime
-- `serde_json`: JSON serialization
+- `async-openai`: Cliente para API OpenAI
+- `reqwest`: Cliente HTTP para API OCR
+- `base64`: Codificação de imagens
+- `dotenv`: Gestão de variáveis de ambiente
+- `tokio`: Runtime assíncrono
+- `serde_json`: Serialização JSON
 
-## Error Handling
+## Tratamento de Erros
 
-The application handles various error cases:
-- Environment file loading failures
-- Image file reading errors
-- API communication issues
+A aplicação trata vários casos de erro:
+- Falhas no carregamento do ficheiro de ambiente
+- Erros na leitura de ficheiros de imagem
+- Problemas de comunicação com as APIs
 
-## Performance
+## Desempenho
 
-The application includes performance monitoring, displaying response times in minutes, seconds, and milliseconds for API calls.
+A aplicação inclui monitorização de desempenho, exibindo tempos de resposta em minutos, segundos e milissegundos para chamadas de API, permitindo uma comparação direta entre as tecnologias OCR e LLM Vision.
 
-## License
+## Licença
 
-This project is open source and available under the MIT License.
+Este projeto é de código aberto e disponível sob a Licença MIT.
