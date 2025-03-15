@@ -27,7 +27,7 @@ O projeto permite comparar:
 
 ## Sites
 
-- https://platform.openai.com/api-keys
+- https://platform.openai.com/settings/organization/api-keys
 - https://ocr.space/OCRAPI
 
 ## Configuração
